@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" style="scroll-padding-top: 5rem;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Bayya Akhil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { darkBg: '#0f172a', cardBg: '#1e293b', accent: '#10b981' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-darkBg text-gray-200 antialiased selection:bg-accent selection:text-white">
+
+    <nav class="fixed w-full top-0 z-50 bg-darkBg/80 backdrop-blur-lg border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-white tracking-tight hover:opacity-80 transition">
+                AKHIL<span class="text-accent">/ID</span>
+            </a>
+            <div class="hidden md:flex space-x-10 font-medium text-sm tracking-wide">
+                <a href="index.html#about" class="text-gray-300 hover:text-accent transition-colors">About</a>
+                <a href="index.html#skills" class="text-gray-300 hover:text-accent transition-colors">Skills</a>
+                <a href="#" class="text-accent">Case Studies</a>
+            </div>
+            <a href="index.html" class="md:hidden text-accent text-sm font-bold">← Back Home</a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-16 px-6 text-center border-b border-white/5 bg-cardBg/20">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-4 fade-in">Engineering <span class="text-accent">Deep Dives</span></h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg fade-in">Detailed architectural breakdowns of my core systems, from problem statements to enterprise-grade solutions.</p>
+    </header>
+
+    <article class="py-24 px-6 border-b border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12 fade-in">
+                <span class="text-accent font-mono text-sm border border-accent/30 bg-accent/10 px-3 py-1 rounded-full">MERN Stack + GenAI</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-6 mb-4">Krishi Chakra 2.0</h2>
+                <p class="text-xl text-gray-300 font-medium">The Neural Matrix of Agriculture</p>
+            </div>
+
+            <blockquote class="border-l-4 border-accent pl-6 mb-12 text-gray-400 italic text-lg max-w-4xl fade-in">
+                "While the world discusses AI for Silicon Valley, we looked at the backbone of our nation. Most agri-tech apps today are just digital noticeboards—they don't think, predict, or protect. Krishi Chakra transforms the traditional farmer into a data-driven enterprise manager."
+            </blockquote>
+
+            <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-6 hide-scrollbar cursor-grab active:cursor-grabbing mb-16 fade-in">
+                <img src="images/krishi-1.jpeg" alt="Krishi UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-top rounded-2xl snap-center border border-white/10 flex-shrink-0">
+                <img src="images/krishi-2.jpeg" alt="Krishi UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-top rounded-2xl snap-center border border-white/10 flex-shrink-0">
+                <img src="images/krishi-3.jpeg" alt="Krishi UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-top rounded-2xl snap-center border border-white/10 flex-shrink-0">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 fade-in">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 border-b border-white/10 pb-2">Smart AgriCore & Commercial Gateway</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><strong class="text-accent">Subscription Gate:</strong> A scalable revenue model. Users unlock the 'Pro Matrix' (Gemini AI features) via dynamic backend authentication (e.g., Activation Code: JUDGE-PASS).</li>
+                        <li><strong class="text-accent">Geospatial Telemetry:</strong> Automatically locks onto the farmer's satellite location, cross-referencing local groundwater tables and regional soil heuristics.</li>
+                        <li><strong class="text-accent">The Business Matrix:</strong> Calculates Expected Revenue vs. Net Profit per acre based on live Mandi trends.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 border-b border-white/10 pb-2">Active Care & Resource Sharing</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><strong class="text-accent">Pest Radar:</strong> Uses a Haversine Distance Algorithm to map nearby threats, triggering Multilingual Voice Alerts within a 10km radius.</li>
+                        <li><strong class="text-accent">Hydro Smart:</strong> A Life-Cycle Irrigation Matrix that saves up to 50% groundwater by adjusting to specific crop stages.</li>
+                        <li><strong class="text-accent">Sahayog (Agri-Uber):</strong> A secure booking engine for machinery sharing, generating Unified UPI QR codes for transparent P2P transactions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-cardBg/40 p-8 rounded-2xl border border-white/5 fade-in">
+                <h4 class="text-white font-bold mb-4">Technical Backbone (The Secret Sauce)</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Built with a mobile-first <strong>React.js</strong> frontend. Intelligence is powered by <strong>Google Gemini AI 1.5 Flash</strong> for rapid, multimodal analysis. The backend runs on <strong>Node.js/Express</strong> with a dual-engine CORS policy, connected to a real-time <strong>MongoDB Atlas Cloud</strong> database for instant field-to-admin syncing.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12 fade-in">
+                <span class="text-blue-400 font-mono text-sm border border-blue-400/30 bg-blue-400/10 px-3 py-1 rounded-full">Java Spring Boot + MVC</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-6 mb-4">MediFlow AI</h2>
+                <p class="text-xl text-gray-300 font-medium">Intelligent Hospital Management System</p>
+            </div>
+
+            <blockquote class="border-l-4 border-blue-400 pl-6 mb-12 text-gray-400 italic text-lg max-w-4xl fade-in">
+                "Traditional systems are highly fragmented. Patients struggle to find specialists, beds are tracked on static clipboards, and legacy software lacks backend security. MediFlow bridges the gap between public accessibility and enterprise-grade administrative control."
+            </blockquote>
+
+            <div class="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-6 hide-scrollbar cursor-grab active:cursor-grabbing mb-16 fade-in">
+                <img src="images/mediflow-3.jpeg" alt="MediFlow UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-top rounded-2xl snap-center border border-white/10 flex-shrink-0">
+                <img src="images/mediflow-4.jpeg" alt="MediFlow UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-top rounded-2xl snap-center border border-white/10 flex-shrink-0">
+                <img src="images/mediflow-5.jpeg" alt="MediFlow UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-top rounded-2xl snap-center border border-white/10 flex-shrink-0">
+                <img src="images/mediflow-2.jpeg" alt="MediFlow UI" class="w-[85vw] md:w-[450px] h-72 object-cover object-center rounded-2xl snap-center border border-white/10 flex-shrink-0">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 fade-in">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 border-b border-white/10 pb-2">Public Gateway & Live Tracking</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><strong class="text-blue-400">Symptom-Based AI Routing:</strong> Patients bypass medical jargon. Typing "severe chest pain" dynamically filters the DB to match a Cardiologist and securely generates a token.</li>
+                        <li><strong class="text-blue-400">Live Resource Tracking (CRUD):</strong> Dynamic DB tracking 100+ hospital beds. Doctors update patient status (Pre-op, Critical) which instantly refreshes public capacity metrics.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 border-b border-white/10 pb-2">Enterprise Security (RBAC)</h3>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><strong class="text-blue-400">Role-Based Access:</strong> System intercepts logins, routing ADMINS to the Command Center and DOCTORS to the Clinical Dashboard.</li>
+                        <li><strong class="text-blue-400">Encrypted Credentials:</strong> Utilizes <code>spring-boot-starter-security</code>. Passwords are never plain-text; they are encrypted using <code>BCryptPasswordEncoder</code>.</li>
+                        <li><strong class="text-blue-400">Fail-Safe Protection:</strong> The <code>SecurityFilterChain</code> instantly intercepts unauthorized endpoint access and redirects to the secure login gateway.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-cardBg/40 p-8 rounded-2xl border border-white/5 fade-in">
+                <h4 class="text-white font-bold mb-4">Pure Java Engineering Stack</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Engineered purely in <strong>Java Spring Boot</strong> utilizing a strict MVC architecture (Controller-Service-Repository pattern). Data is persisted via <strong>MySQL mapped by Spring Data JPA/Hibernate</strong>. The frontend is cleanly rendered server-side using the <strong>Thymeleaf Templating Engine</strong> with Bootstrap 5.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <footer class="bg-cardBg py-12 border-t border-white/5 text-center mt-12">
+        <a href="index.html" class="inline-block bg-white text-darkBg px-8 py-3 rounded-xl font-bold hover:bg-gray-200 transition-all shadow-lg mb-8">
+            Return to Portfolio
+        </a>
+        <p class="text-gray-500 text-sm">© 2026 Bayya Akhil.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

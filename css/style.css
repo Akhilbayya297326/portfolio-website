@@ -1,0 +1,90 @@
+/* =========================================
+   GLOBAL STYLES & TYPOGRAPHY
+   ========================================= */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Text Selection Highlight */
+::selection {
+    background-color: #10b981; /* Emerald Green */
+    color: #ffffff;
+}
+::-moz-selection {
+    background-color: #10b981;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   CUSTOM MAIN SCROLLBAR
+   ========================================= */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a; /* Matches darkBg */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b; /* Matches cardBg */
+    border-radius: 10px;
+    border: 3px solid #0f172a; /* Creates a padded effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #10b981; /* Emerald Accent */
+}
+
+
+/* =========================================
+   HORIZONTAL GALLERY SCROLLBAR (HIDDEN)
+   ========================================= */
+/* Hides the scrollbar for the image carousels but keeps functionality */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS (Triggered by JS)
+   ========================================= */
+/* Base state - hidden and slightly moved down */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Using a custom cubic-bezier for a "spring-like" smooth premium feel */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active state - visible and in original position */
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   UTILITIES
+   ========================================= */
+/* Cursors for the swiping galleries */
+.cursor-grab {
+    cursor: grab;
+}
+
+.cursor-grab:active {
+    cursor: grabbing;
+}
