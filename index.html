@@ -41,56 +41,56 @@
                 <a href="index.html#achievements" class="text-gray-300 hover:text-accent transition-colors duration-300">Achievements</a>
             </div>
 
-            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-accent focus:outline-none z-50 transition-colors" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-300 hover:text-accent focus:outline-none z-50 transition-colors p-2" aria-label="Toggle Menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-darkBg/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-6 px-6 flex flex-col space-y-6 text-center">
-            <a href="index.html#about" class="text-lg font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
-            <a href="index.html#skills" class="text-lg font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Skills</a>
-            <a href="projects.html" class="text-lg font-bold text-accent hover:text-emerald-400 transition-colors">Case Studies</a>
-            <a href="index.html#leadership" class="text-lg font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Leadership</a>
-            <a href="index.html#achievements" class="text-lg font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Achievements</a>
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-darkBg/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-8 px-6 flex flex-col space-y-8 text-center max-h-[80vh] overflow-y-auto">
+            <a href="index.html#about" class="text-xl font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+            <a href="index.html#skills" class="text-xl font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Skills</a>
+            <a href="projects.html" class="text-xl font-bold text-accent hover:text-emerald-400 transition-colors">Case Studies</a>
+            <a href="index.html#leadership" class="text-xl font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Leadership</a>
+            <a href="index.html#achievements" class="text-xl font-medium text-gray-300 hover:text-accent transition-colors" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Achievements</a>
         </div>
     </nav>
 
-    <section id="about" class="min-h-screen flex items-center justify-center pt-32 pb-24 px-6 relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[150px] pointer-events-none"></div>
+    <section id="about" class="min-h-screen flex items-center justify-center pt-32 pb-24 px-4 sm:px-6 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[800px] h-[90vw] md:h-[800px] bg-accent/10 rounded-full blur-[100px] md:blur-[150px] pointer-events-none"></div>
         
         <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
             
             <div class="mb-8 flex justify-center fade-in">
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-accent to-teal-500 rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-300"></div>
-                    <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-cardBg/50 overflow-hidden bg-cardBg shadow-2xl backdrop-blur-sm">
+                    <div class="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full border-4 border-cardBg/50 overflow-hidden bg-cardBg shadow-2xl backdrop-blur-sm">
                         <img src="images/profile.jpeg" alt="B. Akhil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                 </div>
             </div>
 
             <div class="inline-flex mb-4 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/10 backdrop-blur-sm fade-in" style="transition-delay: 100ms;">
-                <p class="text-accent text-sm font-semibold tracking-widest uppercase">CGPA: 9.05 | B.Tech CSE</p>
+                <p class="text-accent text-xs sm:text-sm font-semibold tracking-widest uppercase">CGPA: 9.05 | B.Tech CSE</p>
             </div>
             
             <div class="fade-in" style="transition-delay: 200ms;">
-                <h1 class="text-5xl md:text-8xl font-black text-white mb-2 tracking-tight uppercase">
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-black text-white mb-2 tracking-tight uppercase">
                     B. AKHIL
                 </h1>
-                <h2 class="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-400 text-transparent bg-clip-text mb-8 tracking-tight">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-400 text-transparent bg-clip-text mb-8 tracking-tight px-4">
                     Full Stack Developer.
                 </h2>
             </div>
             
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed fade-in" style="transition-delay: 300ms;">
+            <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed fade-in px-2" style="transition-delay: 300ms;">
                 I turn complex problems into elegant, user-centric web applications. Specializing in the MERN stack and Java Enterprise ecosystems, I build secure backends, scalable architecture, and clean interfaces that drive real-world impact.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-5 fade-in" style="transition-delay: 400ms;">
-                <a href="projects.html" class="bg-accent text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.7)]">
+            <div class="flex flex-col sm:flex-row justify-center w-full sm:w-auto gap-4 sm:gap-5 px-4 sm:px-0 fade-in" style="transition-delay: 400ms;">
+                <a href="projects.html" class="w-full sm:w-auto text-center bg-accent text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.7)]">
                     View Case Studies
                 </a>
-                <a href="Bayya_Akhil_Resume.pdf" download="Bayya_Akhil_Resume.pdf" class="border border-gray-600 px-8 py-4 rounded-xl font-bold text-white hover:border-accent hover:text-accent transition-all duration-300 transform hover:-translate-y-1 bg-cardBg/30 backdrop-blur-sm flex items-center justify-center gap-2">
+                <a href="Bayya_Akhil_Resume.pdf" download="Bayya_Akhil_Resume.pdf" class="w-full sm:w-auto text-center border border-gray-600 px-8 py-4 rounded-xl font-bold text-white hover:border-accent hover:text-accent transition-all duration-300 transform hover:-translate-y-1 bg-cardBg/30 backdrop-blur-sm flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     Download CV
                 </a>
@@ -98,23 +98,23 @@
         </div>
     </section>
 
-    <section id="skills" class="py-24 bg-darkBg px-6 relative border-t border-white/5">
+    <section id="skills" class="py-20 md:py-24 bg-darkBg px-4 sm:px-6 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 text-center fade-in">Technical <span class="text-accent">Arsenal</span></h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12 md:mb-16 text-center fade-in">Technical <span class="text-accent">Arsenal</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
                 <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in">
                     <h3 class="font-bold text-white text-lg mb-3">Frontend</h3>
                     <p class="text-sm text-gray-400">React.js, JavaScript, HTML5, CSS3, Tailwind</p>
                 </div>
-                <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in" style="transition-delay: 100ms;">
+                <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in">
                     <h3 class="font-bold text-white text-lg mb-3">Backend</h3>
                     <p class="text-sm text-gray-400">Node.js, Express.js, Java Spring Boot, Python</p>
                 </div>
-                <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in" style="transition-delay: 200ms;">
+                <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in">
                     <h3 class="font-bold text-white text-lg mb-3">Databases</h3>
                     <p class="text-sm text-gray-400">MongoDB, MySQL, Oracle SQL</p>
                 </div>
-                <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in" style="transition-delay: 300ms;">
+                <div class="bg-cardBg/50 backdrop-blur-sm p-8 rounded-2xl border border-white/5 hover:border-accent/50 transition-all duration-300 fade-in">
                     <h3 class="font-bold text-white text-lg mb-3">Architecture</h3>
                     <p class="text-sm text-gray-400">REST APIs, Spring Security, MVC Pattern, RBAC</p>
                 </div>
@@ -122,55 +122,57 @@
         </div>
     </section>
 
-    <section class="py-24 bg-cardBg/30 px-6 relative border-y border-white/5 text-center">
+    <section class="py-20 md:py-24 bg-cardBg/30 px-4 sm:px-6 relative border-y border-white/5 text-center">
         <div class="max-w-4xl mx-auto fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Real-World <span class="text-accent">Projects</span></h2>
-            <p class="text-gray-400 text-lg mb-10">Explore how I built an AI-powered smart farming platform, a highly secure Hospital Management System, and an NLP-driven ATS Resume Analyzer that boosted user engagement by 40%.</p>
-            <a href="projects.html" class="inline-flex items-center gap-3 bg-white text-darkBg px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]">
+            <p class="text-base sm:text-lg text-gray-400 mb-10 max-w-2xl mx-auto">Explore how I built an AI-powered smart farming platform, a highly secure Hospital Management System, and an NLP-driven ATS Resume Analyzer that boosted user engagement by 40%.</p>
+            <a href="projects.html" class="inline-flex items-center justify-center w-full sm:w-auto gap-3 bg-white text-darkBg px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_40px_-10px_rgba(255,255,255,0.2)]">
                 Read the Case Studies
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </a>
         </div>
     </section>
 
-    <section id="leadership" class="py-24 bg-darkBg border-b border-white/5 px-6 relative overflow-hidden">
+    <section id="leadership" class="py-20 md:py-24 bg-darkBg border-b border-white/5 px-4 sm:px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                 
                 <div class="w-full lg:w-1/2 text-left fade-in">
                     <div class="inline-flex items-center justify-center px-4 py-2 bg-purple-500/10 text-purple-400 rounded-xl border border-purple-500/20 mb-6">
-                        <span class="text-sm font-bold tracking-wider uppercase">🎤 Leadership & Community</span>
+                        <span class="text-xs sm:text-sm font-bold tracking-wider uppercase">🎤 Leadership & Community</span>
                     </div>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">R&D Lead <span class="text-accent">@ Aiverse Club</span></h2>
-                    <p class="text-xl text-gray-300 font-medium mb-6">Lendi Institute of Engineering & Technology</p>
+                    <p class="text-lg md:text-xl text-gray-300 font-medium mb-6">Lendi Institute of Engineering & Technology</p>
                     
-                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                    <p class="text-base md:text-lg text-gray-400 leading-relaxed mb-6">
                         Beyond writing code, I am deeply committed to building a culture of innovation. As the Research and Development Lead, I actively bridge the gap between academic theory and industry-level Artificial Intelligence.
                     </p>
                     
                     <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start">
-                            <span class="text-accent mr-3 mt-1">▹</span> 
+                        <li class="flex items-start text-sm md:text-base">
+                            <span class="text-accent mr-3 mt-0.5">▹</span> 
                             <span><strong class="text-white">Mentorship:</strong> Guiding junior developers, sharing technical knowledge, and fostering a collaborative learning environment.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-accent mr-3 mt-1">▹</span> 
+                        <li class="flex items-start text-sm md:text-base">
+                            <span class="text-accent mr-3 mt-0.5">▹</span> 
                             <span><strong class="text-white">Tech Workshops:</strong> Organizing and speaking at college-wide events to demystify GenAI, NLP, and modern web development.</span>
                         </li>
-                        <li class="flex items-start">
-                            <span class="text-accent mr-3 mt-1">▹</span> 
+                        <li class="flex items-start text-sm md:text-base">
+                            <span class="text-accent mr-3 mt-0.5">▹</span> 
                             <span><strong class="text-white">Innovation:</strong> Leading technical sessions to encourage peer-to-peer knowledge sharing and hackathon participation.</span>
                         </li>
                     </ul>
                 </div>
                 
-                <div class="w-full lg:w-1/2 relative fade-in">
-                    <div class="relative w-full h-[500px] sm:h-[550px]">
-                        <div class="absolute top-0 right-0 w-[85%] sm:w-3/4 h-[300px] sm:h-[350px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 group">
-                            <img src="images/aiverse-1.jpeg" alt="Speaking at Podium" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700">
+                <div class="w-full lg:w-1/2 relative fade-in mt-8 lg:mt-0">
+                    <div class="relative w-full aspect-square sm:aspect-video lg:h-[600px] lg:aspect-auto flex items-center justify-center">
+                        
+                        <div class="absolute top-0 right-0 w-[70%] sm:w-[60%] lg:w-[65%] aspect-[3/4] sm:aspect-square lg:aspect-auto lg:h-[450px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl z-10 group">
+                            <img src="images/aiverse-1.jpeg" alt="Speaking at Podium" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700">
                         </div>
-                        <div class="absolute bottom-0 left-0 w-[75%] sm:w-2/3 h-[250px] sm:h-[300px] rounded-2xl overflow-hidden border-4 border-darkBg shadow-2xl z-20 group">
-                            <img src="images/aiverse-2.jpeg" alt="Aiverse Research Head" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        
+                        <div class="absolute bottom-0 left-0 w-[80%] sm:w-[70%] lg:w-[70%] aspect-video lg:h-[300px] lg:aspect-auto rounded-2xl overflow-hidden border-4 border-darkBg shadow-2xl z-20 group">
+                            <img src="images/aiverse-2.jpeg" alt="Aiverse Research Head" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700">
                         </div>
                     </div>
                 </div>
@@ -179,62 +181,62 @@
         </div>
     </section>
 
-    <section id="achievements" class="py-24 bg-cardBg/30 px-6 relative overflow-hidden">
+    <section id="achievements" class="py-20 md:py-24 bg-cardBg/30 px-4 sm:px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-16 fade-in">
+            <div class="text-center mb-12 md:mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Achievements & <span class="text-accent">Industry Impact</span></h2>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto">Recognition from leading tech summits and senior industry leadership.</p>
+                <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto">Recognition from leading tech summits and senior industry leadership.</p>
             </div>
             
-            <div class="bg-darkBg rounded-3xl p-8 md:p-12 border border-white/5 shadow-2xl flex flex-col xl:flex-row-reverse items-center gap-12 mb-12 fade-in">
+            <div class="bg-darkBg rounded-3xl p-6 sm:p-8 md:p-12 border border-white/5 shadow-2xl flex flex-col xl:flex-row-reverse items-center gap-8 xl:gap-12 mb-12 fade-in">
                 <div class="w-full xl:w-1/2 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
                     <img src="images/cisco.jpeg" alt="Interaction with Cisco Leadership" class="w-full h-auto object-cover hover:scale-105 transition duration-700">
                 </div>
                 
                 <div class="w-full xl:w-1/2 text-left">
                     <div class="inline-flex items-center justify-center px-4 py-2 bg-blue-500/10 text-blue-400 rounded-xl border border-blue-500/20 mb-6">
-                        <span class="text-sm font-bold tracking-wider uppercase">🤝 Industry Feedback</span>
+                        <span class="text-xs sm:text-sm font-bold tracking-wider uppercase">🤝 Industry Feedback</span>
                     </div>
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Cisco Leadership Recognition</h3>
+                    <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">Cisco Leadership Recognition</h3>
                     
-                    <blockquote class="border-l-4 border-accent pl-6 mb-6 text-gray-300 italic text-lg leading-relaxed">
+                    <blockquote class="border-l-4 border-accent pl-4 sm:pl-6 mb-6 text-gray-300 italic text-base sm:text-lg leading-relaxed">
                         "It was an absolute honour to receive direct guidance and feedback from Mr. Venkatesh Poniah Garu, Senior Security Director at Cisco."
                     </blockquote>
                     
-                    <p class="text-gray-400 leading-relaxed mb-4">
+                    <p class="text-sm sm:text-base text-gray-400 leading-relaxed mb-4">
                         His appreciation of <strong>ApexResume’s</strong> vision and innovative approach, combined with highly actionable technical insights, reinforced the real-world relevance of our work. 
                     </p>
-                    <p class="text-gray-400 leading-relaxed">
+                    <p class="text-sm sm:text-base text-gray-400 leading-relaxed">
                         This interaction was deeply inspiring. Such recognition from experienced industry leadership motivates me to align my solutions closely with enterprise expectations and strengthens my commitment to building scalable, user-centric software.
                     </p>
                 </div>
             </div>
 
-            <div class="bg-darkBg rounded-3xl p-8 md:p-12 border border-white/5 shadow-2xl flex flex-col xl:flex-row items-center gap-12 fade-in">
+            <div class="bg-darkBg rounded-3xl p-6 sm:p-8 md:p-12 border border-white/5 shadow-2xl flex flex-col xl:flex-row items-center gap-8 xl:gap-12 fade-in">
                 
                 <div class="w-full xl:w-1/2 flex flex-col sm:flex-row gap-4 justify-center">
                     <div class="w-full sm:w-1/2 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
-                        <img src="images/award-1.jpeg" alt="Award 1" class="w-full h-64 md:h-80 object-cover object-top hover:scale-110 transition duration-700">
+                        <img src="images/award-1.jpeg" alt="Award 1" class="w-full h-48 sm:h-64 md:h-80 object-cover object-top hover:scale-110 transition duration-700">
                     </div>
-                    <div class="w-full sm:w-1/2 overflow-hidden rounded-2xl border border-white/10 shadow-lg mt-4 sm:mt-10">
-                        <img src="images/award-2.jpeg" alt="Award 2" class="w-full h-64 md:h-80 object-cover object-top hover:scale-110 transition duration-700">
+                    <div class="w-full sm:w-1/2 overflow-hidden rounded-2xl border border-white/10 shadow-lg sm:mt-10">
+                        <img src="images/award-2.jpeg" alt="Award 2" class="w-full h-48 sm:h-64 md:h-80 object-cover object-top hover:scale-110 transition duration-700">
                     </div>
                 </div>
                 
                 <div class="w-full xl:w-1/2 text-left">
                     <div class="inline-flex items-center justify-center px-4 py-2 bg-accent/10 text-accent rounded-xl border border-accent/20 mb-6">
-                        <span class="text-sm font-bold tracking-wider uppercase">⭐ Solo Competitor</span>
+                        <span class="text-xs sm:text-sm font-bold tracking-wider uppercase">⭐ Solo Competitor</span>
                     </div>
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-white mb-8 tracking-tight">Double Ideathon Winner</h3>
+                    <h3 class="text-2xl md:text-4xl font-extrabold text-white mb-8 tracking-tight">Double Ideathon Winner</h3>
                     
-                    <div class="space-y-6">
-                        <div class="bg-cardBg/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors duration-300">
-                            <h4 class="text-accent font-bold text-lg mb-2">MVGR College of Engineering</h4>
-                            <p class="text-gray-400 leading-relaxed">Secured the <strong class="text-white">2nd Prize</strong> at this prestigious state-level Ideathon. Competing entirely as a <strong class="text-white">solo participant</strong> against 50+ teams, I successfully developed and pitched a complete full-stack solution under strict time constraints.</p>
+                    <div class="space-y-4 sm:space-y-6">
+                        <div class="bg-cardBg/40 p-5 sm:p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors duration-300">
+                            <h4 class="text-accent font-bold text-base sm:text-lg mb-2">MVGR College of Engineering</h4>
+                            <p class="text-sm sm:text-base text-gray-400 leading-relaxed">Secured the <strong class="text-white">2nd Prize</strong> at this prestigious state-level Ideathon. Competing entirely as a <strong class="text-white">solo participant</strong> against 50+ teams, I successfully developed and pitched a complete full-stack solution under strict time constraints.</p>
                         </div>
-                        <div class="bg-cardBg/40 p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors duration-300">
-                            <h4 class="text-accent font-bold text-lg mb-2">Lendi National Innovation Summit</h4>
-                            <p class="text-gray-400 leading-relaxed">Won the <strong class="text-white">2nd Prize</strong> at the Rural Innovation Challenge. I independently designed and presented an impactful tech solution, outperforming 40+ teams and demonstrating high-level problem-solving and self-reliance.</p>
+                        <div class="bg-cardBg/40 p-5 sm:p-6 rounded-2xl border border-white/5 hover:border-accent/30 transition-colors duration-300">
+                            <h4 class="text-accent font-bold text-base sm:text-lg mb-2">Lendi National Innovation Summit</h4>
+                            <p class="text-sm sm:text-base text-gray-400 leading-relaxed">Won the <strong class="text-white">2nd Prize</strong> at the Rural Innovation Challenge. I independently designed and presented an impactful tech solution, outperforming 40+ teams and demonstrating high-level problem-solving and self-reliance.</p>
                         </div>
                     </div>
                 </div>
@@ -243,16 +245,16 @@
         </div>
     </section>
 
-    <footer id="contact" class="bg-darkBg py-12 border-t border-white/5 text-center">
+    <footer id="contact" class="bg-darkBg py-12 border-t border-white/5 text-center px-4">
         <h2 class="text-2xl font-bold text-white mb-6">Let's Connect</h2>
-        <a href="mailto:akhilbayya111@gmail.com" class="text-accent hover:text-white transition mb-6 inline-block font-mono text-lg">akhilbayya111@gmail.com</a>
+        <a href="mailto:akhilbayya111@gmail.com" class="text-accent hover:text-white transition mb-6 inline-block font-mono text-base sm:text-lg break-all">akhilbayya111@gmail.com</a>
         
         <div class="flex justify-center gap-6 mt-4 mb-6">
-            <a href="https://github.com/Akhilbayya297326" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110">
+            <a href="https://github.com/Akhilbayya297326" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110 p-2">
                 <span class="sr-only">GitHub</span>
                 <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
             </a>
-            <a href="https://linkedin.com/in/bayya-akhil-009a412a8" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110">
+            <a href="https://linkedin.com/in/bayya-akhil-009a412a8" target="_blank" class="text-gray-400 hover:text-accent transition transform hover:scale-110 p-2">
                 <span class="sr-only">LinkedIn</span>
                 <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" /></svg>
             </a>
