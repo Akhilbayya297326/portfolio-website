@@ -68,7 +68,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Gradient Text Animation */
-.bg-300 { background-size: 300% 300%; }
+.bg-gradient-zoom { background-size: 300% 300%; }
 .animate-gradient { animation: gradient 6s ease infinite; }
 
 @keyframes gradient {
