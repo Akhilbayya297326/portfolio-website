@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies | B. Akhil</title>
+    <!-- Tailwind CSS Configuration with Custom Animations -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,7 +30,7 @@
 </head>
 <body class="bg-darkBg text-gray-200 antialiased selection:bg-accent selection:text-white">
 
-    <!-- Navigation -->
+    <!-- Navigation (Fully Responsive Premium Glass) -->
     <nav class="fixed w-full top-0 z-50 bg-darkBg/80 backdrop-blur-xl border-b border-white/10 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             
@@ -62,7 +63,7 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- Page Header with Ambient Glow -->
     <header class="pt-32 pb-16 px-4 sm:px-6 text-center border-b border-white/5 bg-cardBg/20 relative overflow-hidden">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
         <div class="relative z-10">
@@ -228,11 +229,19 @@
                     <p class="text-sm sm:text-base text-gray-400 leading-relaxed max-w-md mx-auto">Achieved massive engagement spikes by replacing generic advice with highly personalized, actionable feedback loops and role-focused optimization guidance.</p>
                 </div>
             </div>
+
+            <div class="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 mt-12 sm:mt-16 fade-in">
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-purple-400/50 transition-colors text-gray-300">React.js</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-purple-400/50 transition-colors text-gray-300">Node.js</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-purple-400/50 transition-colors text-gray-300">MongoDB</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-purple-400/50 transition-colors text-gray-300">Gemini API</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-purple-400/50 transition-colors text-gray-300">NLP Pipeline</span>
+            </div>
         </div>
     </article>
 
     <!-- CASE STUDY 4: INSIGHT-COMPANION (AURO) -->
-    <article class="py-20 sm:py-24 px-4 sm:px-6">
+    <article class="py-20 sm:py-24 px-4 sm:px-6 border-b border-white/5">
         <div class="max-w-6xl mx-auto">
             <div class="mb-10 sm:mb-12 fade-in">
                 <span class="inline-block text-amber-400 font-mono text-xs sm:text-sm border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(251,191,36,0.15)]">MERN Stack + Multimodal AI</span>
@@ -281,6 +290,69 @@
                 <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-amber-400/50 transition-colors text-gray-300">React.js</span>
                 <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-amber-400/50 transition-colors text-gray-300">Gemini Vision API</span>
                 <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-amber-400/50 transition-colors text-gray-300">Voice Synthesis</span>
+            </div>
+        </div>
+    </article>
+
+    <!-- CASE STUDY 5: CAREBRIDGE -->
+    <article class="py-20 sm:py-24 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-10 sm:mb-12 fade-in">
+                <span class="inline-block text-rose-400 font-mono text-xs sm:text-sm border border-rose-400/30 bg-rose-400/10 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(251,113,133,0.15)]">MERN + Gemini AI + WhatsApp API</span>
+                
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 mt-6 mb-4">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">CareBridge</h2>
+                    <a href="https://care-bridge-zeta-jet.vercel.app/" target="_blank" class="flex items-center gap-2 bg-rose-500/10 border border-rose-500/30 hover:bg-rose-500 hover:text-white text-rose-400 px-5 py-2.5 rounded-full transition-all duration-300 group shadow-lg">
+                        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider">Live Demo</span>
+                        <svg class="w-4 h-4 transform group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+                
+                <p class="text-lg sm:text-xl text-gray-300 font-medium">AI-Powered Tele-Triage for Rural Post-Operative Care</p>
+            </div>
+
+            <blockquote class="border-l-4 border-rose-400 pl-4 sm:pl-6 py-2 sm:py-4 mb-10 sm:mb-12 text-gray-300 italic text-base sm:text-lg max-w-4xl fade-in bg-rose-500/5 rounded-r-2xl">
+                "In rural regions, surgical aftercare often ends at discharge. CareBridge transforms surgical aftercare from reactive crisis management into a proactive, life-saving system by combining WhatsApp with Google Gemini's multimodal AI to continuously monitor rural patients."
+            </blockquote>
+
+            <div class="grid lg:grid-cols-2 gap-10 sm:gap-12 fade-in">
+                <div class="bg-cardBg/30 p-6 sm:p-8 rounded-3xl border border-white/5 hover:border-rose-400/30 transition-colors duration-300">
+                    <div class="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
+                        <div class="p-3 bg-rose-500/10 rounded-xl border border-rose-500/20">
+                            <!-- Stethoscope/Heartbeat Icon -->
+                            <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">The Architecture</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm sm:text-base text-gray-400">
+                        <li class="flex items-start"><span class="text-rose-400 mr-3 mt-1">▹</span><span><strong class="text-white">Frictionless Input:</strong> Uses WhatsApp—a familiar, low-bandwidth app—allowing patients to send text updates and wound photos without downloading new applications.</span></li>
+                        <li class="flex items-start"><span class="text-rose-400 mr-3 mt-1">▹</span><span><strong class="text-white">Multimodal AI Engine:</strong> Google Gemini instantly analyzes images and text to extract symptoms and categorize the patient’s status (Red: Critical, Yellow: Watch, Green: Stable).</span></li>
+                        <li class="flex items-start"><span class="text-rose-400 mr-3 mt-1">▹</span><span><strong class="text-white">Enterprise Dashboard:</strong> Pushes insights to a real-time, cloud-based dashboard giving surgeons a prioritized list of patients and chronological recovery timelines.</span></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-cardBg/30 p-6 sm:p-8 rounded-3xl border border-white/5 hover:border-rose-400/30 transition-colors duration-300">
+                    <div class="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
+                        <div class="p-3 bg-rose-500/10 rounded-xl border border-rose-500/20">
+                            <!-- Globe/Impact Icon -->
+                            <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Socio-Economic Impact</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm sm:text-base text-gray-400">
+                        <li class="flex items-start"><span class="text-rose-400 mr-3 mt-1">▹</span><span><strong class="text-white">Democratization of Care:</strong> Ensures a marginalized patient 100km away receives the exact same rapid clinical assessment as an urban patient.</span></li>
+                        <li class="flex items-start"><span class="text-rose-400 mr-3 mt-1">▹</span><span><strong class="text-white">Economic Relief:</strong> Verifying "Green" (Stable) statuses remotely saves rural families from losing daily wages and paying for unnecessary hospital transport.</span></li>
+                        <li class="flex items-start"><span class="text-rose-400 mr-3 mt-1">▹</span><span><strong class="text-white">Systemic Optimization:</strong> Shifts from reactive emergency treatment to proactive monitoring, reducing preventable readmissions and freeing up critical ICU beds.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center sm:justify-start gap-3 sm:gap-4 mt-12 sm:mt-16 fade-in">
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-rose-400/50 transition-colors text-gray-300">WhatsApp API</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-rose-400/50 transition-colors text-gray-300">Google Gemini AI</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-rose-400/50 transition-colors text-gray-300">Node.js</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-rose-400/50 transition-colors text-gray-300">React.js</span>
+                <span class="bg-cardBg/40 backdrop-blur-md px-4 py-2 rounded-xl text-sm font-semibold border border-white/10 hover:border-rose-400/50 transition-colors text-gray-300">Cloud Dashboard</span>
             </div>
         </div>
     </article>
