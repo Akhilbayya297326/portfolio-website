@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>B. Akhil | AI-Assisted Full-Stack Developer</title>
+
     <meta name="description" content="B. Akhil — AI-Assisted Full-Stack Developer building intelligent, scalable and user-centric digital products.">
     <meta name="theme-color" content="#06101d">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -20,16 +24,16 @@
                         accentBright: '#72f4c9'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif']
+                        sans: ['Inter', 'system-ui', 'sans-serif']
                     },
                     animation: {
                         'float': 'float 7s ease-in-out infinite',
-                        'spin-slow': 'spin 8s linear infinite',
+                        'spin-slow': 'spin 10s linear infinite'
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' }
+                            '50%': { transform: 'translateY(-12px)' }
                         }
                     }
                 }
@@ -37,273 +41,533 @@
         }
     </script>
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Base reset & typography */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 96px;
+        }
+
+        body {
+            background-color: #06101d;
+            color: #e2e8f0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient subtle grid background */
+        .ambient-grid {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 20%, transparent 80%);
+        }
+
+        /* Scroll reveal animations */
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Accessible tap highlight reset */
+        a, button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #040b14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #35e6ad;
+        }
+    </style>
 </head>
 
-<body class="bg-darkBg text-gray-200 antialiased overflow-x-hidden relative">
+<body class="bg-darkBg text-gray-200 antialiased overflow-x-hidden relative min-h-screen">
 
-    <!-- Ambient Global Backgrounds -->
-    <div class="fixed inset-0 z-[-1] pointer-events-none bg-grid-pattern opacity-20"></div>
-    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-accent/5 blur-[120px] z-[-1] pointer-events-none"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-[150px] z-[-1] pointer-events-none"></div>
+    <!-- Global Background Atmospheric Glows -->
+    <div class="fixed inset-0 pointer-events-none ambient-grid z-[-2]"></div>
+    <div class="fixed -top-40 -left-40 w-96 h-96 rounded-full bg-accent/5 blur-[120px] pointer-events-none z-[-1]"></div>
+    <div class="fixed top-1/2 -right-40 w-[450px] h-[450px] rounded-full bg-blue-500/5 blur-[140px] pointer-events-none z-[-1]"></div>
 
-    <!-- ==========================================
-         NAVIGATION
-    =========================================== -->
-    <nav id="navbar" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl transition-all duration-300">
-        <div class="flex items-center justify-between px-5 py-3 rounded-2xl bg-[#06101d]/80 backdrop-blur-xl border border-white/10 shadow-2xl">
-            <!-- Logo -->
-            <a href="index.html" class="text-xl font-black tracking-tight text-white flex items-center gap-2 nav-link">
-                <span class="w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_#35e6ad]"></span>
-                AKHIL<span class="text-accent">/ID</span>
-            </a>
+    <!-- =========================================================
+         FLOATING NAVBAR (Fixed, Zero-Jump, Mobile-Optimised)
+    ========================================================== -->
+    <header class="fixed top-3 inset-x-0 z-50 px-3 sm:px-6">
+        <nav id="navbar" class="max-w-6xl mx-auto rounded-2xl bg-[#06101d]/85 backdrop-blur-xl border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.45)] transition-all duration-300">
+            <div class="flex items-center justify-between px-4 sm:px-6 py-2.5">
+                <!-- Logo -->
+                <a href="index.html" aria-label="Akhil home" class="inline-flex items-center gap-2 min-h-[46px] text-lg font-black tracking-tight text-white hover:opacity-90 transition-opacity">
+                    <span class="w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_#35e6ad]"></span>
+                    AKHIL<span class="text-accent">/ID</span>
+                </a>
 
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center gap-1">
-                <a href="#about" class="px-4 py-2 text-sm font-semibold text-gray-400 hover:text-white rounded-lg hover:bg-white/5 transition-all">About</a>
-                <a href="#skills" class="px-4 py-2 text-sm font-semibold text-gray-400 hover:text-white rounded-lg hover:bg-white/5 transition-all">Skills</a>
-                <a href="projects.html" class="px-4 py-2 text-sm font-semibold text-gray-400 hover:text-white rounded-lg hover:bg-white/5 transition-all">Projects</a>
-                <a href="#leadership" class="px-4 py-2 text-sm font-semibold text-gray-400 hover:text-white rounded-lg hover:bg-white/5 transition-all">Leadership</a>
-                <a href="#contact" class="px-5 py-2 text-sm font-bold text-[#06101d] bg-accent hover:bg-accentBright rounded-lg transition-all ml-2">Get in touch</a>
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <a href="#about" class="px-3.5 py-2 text-xs uppercase tracking-wider font-bold text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">About</a>
+                    <a href="#skills" class="px-3.5 py-2 text-xs uppercase tracking-wider font-bold text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">Skills</a>
+                    <a href="projects.html" class="px-3.5 py-2 text-xs uppercase tracking-wider font-bold text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">Case Studies</a>
+                    <a href="certifications.html" class="px-3.5 py-2 text-xs uppercase tracking-wider font-bold text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">Certifications</a>
+                    <a href="#leadership" class="px-3.5 py-2 text-xs uppercase tracking-wider font-bold text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">Leadership</a>
+                    <a href="#achievements" class="px-3.5 py-2 text-xs uppercase tracking-wider font-bold text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all">Achievements</a>
+                    <a href="#contact" class="ml-2 px-4 py-2 text-xs uppercase tracking-wider font-extrabold text-[#06101d] bg-accent hover:bg-accentBright rounded-xl transition-all shadow-[0_0_15px_rgba(53,230,173,0.25)]">Let's Talk</a>
+                </div>
+
+                <!-- Mobile Hamburger Button (48px Touch Target) -->
+                <button
+                    id="mobile-menu-btn"
+                    type="button"
+                    class="lg:hidden flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path id="bar-top" d="M4 6h16" class="transition-all duration-300 origin-center"></path>
+                        <path id="bar-mid" d="M4 12h16" class="transition-all duration-200"></path>
+                        <path id="bar-bot" d="M4 18h16" class="transition-all duration-300 origin-center"></path>
+                    </svg>
+                </button>
             </div>
 
-            <!-- Mobile Toggle -->
-            <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent transition-colors" aria-label="Toggle menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <path d="M4 6h16" class="line-1 origin-center transition-all duration-300"></path>
-                    <path d="M4 12h16" class="line-2 transition-all duration-300"></path>
-                    <path d="M4 18h16" class="line-3 origin-center transition-all duration-300"></path>
-                </svg>
-            </button>
-        </div>
+            <!-- Mobile Menu Dropdown (Initially Hidden & Non-Popping) -->
+            <div
+                id="mobile-menu"
+                class="hidden opacity-0 -translate-y-2 pointer-events-none lg:!hidden border-t border-white/10 p-3 flex-col gap-1 transition-all duration-300 ease-out"
+            >
+                <a href="#about" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-sm transition-colors">About</a>
+                <a href="#skills" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-sm transition-colors">Skills</a>
+                <a href="projects.html" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-sm transition-colors">Case Studies</a>
+                <a href="certifications.html" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-sm transition-colors">Certifications</a>
+                <a href="#leadership" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-sm transition-colors">Leadership</a>
+                <a href="#achievements" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-sm transition-colors">Achievements</a>
+                <a href="#contact" class="min-h-[48px] flex items-center justify-center mt-2 rounded-xl bg-accent text-[#06101d] font-bold text-sm tracking-wide uppercase transition-colors">Get in touch</a>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="absolute top-[calc(100%+10px)] left-0 w-full bg-[#0d1b2b]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl opacity-0 invisible translate-y-[-10px] transition-all duration-300 flex flex-col gap-2">
-            <a href="#about" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-lg transition-colors">About</a>
-            <a href="#skills" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-lg transition-colors">Skills</a>
-            <a href="projects.html" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-lg transition-colors">Case Studies</a>
-            <a href="#leadership" class="min-h-[48px] flex items-center px-4 rounded-xl text-gray-300 hover:bg-white/5 hover:text-accent font-semibold text-lg transition-colors">Leadership</a>
-            <a href="#contact" class="min-h-[48px] flex items-center justify-center mt-2 rounded-xl bg-accent text-[#06101d] font-bold text-lg transition-colors">Contact Me</a>
-        </div>
-    </nav>
+    <main>
 
-    <main class="pt-32 md:pt-40">
-        <!-- ==========================================
-             HERO SECTION
-        =========================================== -->
-        <section id="about" class="min-h-[80vh] flex items-center px-5 max-w-7xl mx-auto reveal">
-            <div class="grid md:grid-cols-[1fr_400px] gap-12 md:gap-8 items-center w-full">
-                <!-- Content -->
-                <div class="flex flex-col order-2 md:order-1 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-fit mx-auto md:mx-0 mb-6">
-                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                        <span class="text-accent text-xs font-bold tracking-widest uppercase">B.Tech CSE · CGPA 9.05</span>
-                    </div>
+        <!-- =========================================================
+             HERO / ABOUT
+        ========================================================== -->
+        <section id="about" class="pt-32 pb-20 md:pt-44 md:pb-28 px-5 sm:px-6 max-w-6xl mx-auto reveal-item">
+            <div class="grid lg:grid-cols-[1fr_390px] gap-12 lg:gap-14 items-center">
+                
+                <!-- Hero Content Column -->
+                <div class="flex flex-col text-center lg:text-left order-2 lg:order-1">
                     
-                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[1.1] mb-4">
+                    <!-- Status / CGPA Pill -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 w-fit mx-auto lg:mx-0 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                        <span class="text-accent text-xs font-bold tracking-widest uppercase">B.TECH CSE · CGPA 9.05</span>
+                    </div>
+
+                    <!-- Main Titles -->
+                    <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.02] mb-3">
                         B. AKHIL<span class="text-accent">.</span>
                     </h1>
-                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-400 tracking-tight mb-6">
-                        AI-Assisted <span class="text-white">Full-Stack Developer</span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-300 tracking-tight mb-6">
+                        AI-Assisted <span class="text-accent">Full-Stack Developer</span>
                     </h2>
-                    
-                    <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 mb-10">
-                        I build intelligent, scalable, and user-focused digital products. 
-                        <strong class="text-white font-semibold">From ideation to deployment</strong>, I transform complex real-world problems into seamless software experiences.
+
+                    <!-- Hero Paragraph -->
+                    <p class="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+                        I build intelligent, scalable and user-focused digital products by combining full-stack engineering, AI capabilities and strong problem-solving.
+                        <strong class="text-white font-medium block mt-2">From idea to deployment,</strong> I focus on turning real-world problems into useful software experiences.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
-                        <a href="projects.html" class="w-full sm:w-auto min-h-[52px] flex items-center justify-center gap-3 px-8 rounded-xl bg-accent text-[#06101d] font-bold text-sm uppercase tracking-wide hover:bg-accentBright hover:-translate-y-1 transition-all duration-300 shadow-[0_10px_30px_rgba(53,230,173,0.2)]">
-                            Explore Work
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    <!-- Hero Micro Info Pills -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2.5 mb-10 text-xs font-bold text-gray-300 uppercase tracking-wider">
+                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10"><span class="text-accent">●</span> MERN</span>
+                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10"><span class="text-accent">●</span> AI Applications</span>
+                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10"><span class="text-accent">●</span> REST APIs</span>
+                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10"><span class="text-accent">●</span> Data & SQL</span>
+                    </div>
+
+                    <!-- Call To Actions (Thumb friendly 48px+) -->
+                    <div class="flex flex-col sm:flex-row items-center gap-3.5 w-full lg:w-auto">
+                        <a href="projects.html" class="w-full sm:w-auto min-h-[50px] flex items-center justify-center gap-3 px-8 rounded-xl bg-accent text-[#06101d] font-extrabold text-xs uppercase tracking-wider hover:bg-accentBright hover:-translate-y-0.5 transition-all duration-300 shadow-[0_10px_25px_rgba(53,230,173,0.22)]">
+                            Explore My Work
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                         </a>
-                        <a href="Bayya_Akhil_Resume.pdf" download class="w-full sm:w-auto min-h-[52px] flex items-center justify-center gap-3 px-8 rounded-xl bg-white/5 text-white font-bold text-sm uppercase tracking-wide border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
-                            Resume
+                        <a href="Bayya_Akhil_Resume.pdf" download="Bayya_Akhil_Resume.pdf" class="w-full sm:w-auto min-h-[50px] flex items-center justify-center gap-3 px-8 rounded-xl bg-white/5 text-white font-extrabold text-xs uppercase tracking-wider border border-white/10 hover:bg-white/10 hover:border-white/25 hover:-translate-y-0.5 transition-all duration-300">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 10 5 5 5-5"></path><path d="M5 21h14"></path></svg>
+                            Download Resume
                         </a>
                     </div>
                 </div>
 
-                <!-- Image -->
-                <div class="order-1 md:order-2 flex justify-center relative">
-                    <div class="absolute inset-0 bg-accent/20 blur-[80px] rounded-full"></div>
-                    <div class="relative w-64 h-64 md:w-full md:h-[500px] rounded-[32px] overflow-hidden border border-white/10 bg-cardBg z-10 animate-float shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <img src="images/profile.jpeg" alt="B. Akhil" class="w-full h-full object-cover saturate-100 hover:scale-105 transition-transform duration-700" loading="eager">
+                <!-- Hero Profile Image Column -->
+                <div class="order-1 lg:order-2 flex justify-center relative">
+                    <div class="absolute -inset-4 rounded-[40px] bg-accent/15 blur-3xl pointer-events-none"></div>
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-96 lg:w-full lg:h-[480px] rounded-[32px] overflow-hidden border border-white/15 bg-cardBg z-10 animate-float shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
+                        <img src="images/profile.jpeg" alt="Portrait of B. Akhil" class="w-full h-full object-cover saturate-100 hover:scale-105 transition-transform duration-700" loading="eager">
                     </div>
-                    <!-- Floating Badge -->
-                    <div class="absolute bottom-4 right-[-10px] md:bottom-10 md:right-[-20px] bg-[#06101d]/90 backdrop-blur-md border border-accent/30 p-3 rounded-xl z-20 shadow-xl flex items-center gap-3 hidden sm:flex">
-                        <div class="w-10 h-10 rounded-full border border-dashed border-accent flex items-center justify-center animate-spin-slow">
+                    <!-- Micro Badge -->
+                    <div class="absolute bottom-4 right-0 sm:-right-4 bg-[#06101d]/90 backdrop-blur-md border border-accent/30 py-2.5 px-4 rounded-xl z-20 shadow-xl hidden sm:flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full border border-dashed border-accent flex items-center justify-center animate-spin-slow">
                             <span class="w-2 h-2 bg-accent rounded-full"></span>
                         </div>
-                        <span class="text-xs font-bold text-accent uppercase tracking-widest leading-tight">Available For<br>Opportunities</span>
+                        <span class="text-[10px] font-black text-accent uppercase tracking-widest leading-tight">Available For<br>Opportunities</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             SKILLS (TECHNICAL ARSENAL)
+        ========================================================== -->
+        <section id="skills" class="py-20 md:py-28 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/5 reveal-item">
+            <div class="mb-12">
+                <div class="w-10 h-1 bg-accent mb-4 rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">Technical <span class="text-accent">Arsenal.</span></h2>
+                <p class="mt-4 max-w-2xl text-sm sm:text-base text-gray-400 leading-relaxed">
+                    A practical technology stack focused on building complete products — from responsive interfaces and APIs to databases, AI integrations and enterprise-oriented systems.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                <!-- Frontend -->
+                <div class="group bg-cardBg/40 border border-white/10 p-7 rounded-2xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M10 20 14 4"></path><path d="m18 8 4 4-4 4"></path><path d="m6 16-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Frontend</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">React.js, JavaScript, HTML5, CSS3, Tailwind CSS and responsive UI development.</p>
+                </div>
+
+                <!-- Backend -->
+                <div class="group bg-cardBg/40 border border-white/10 p-7 rounded-2xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M5 12h14"></path><path d="M5 12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2"></path><path d="M5 12a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2"></path><path d="M7 8h.01"></path><path d="M7 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Backend</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Node.js, Express.js, REST APIs, Java Spring Boot and Python.</p>
+                </div>
+
+                <!-- Database -->
+                <div class="group bg-cardBg/40 border border-white/10 p-7 rounded-2xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v7c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path><path d="M4 12v7c0 1.66 3.58 3 8 3s8-1.34 8-3v-7"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Data & Databases</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">MongoDB, MySQL, Oracle SQL, database design and SQL-based problem solving.</p>
+                </div>
+
+                <!-- Engineering -->
+                <div class="group bg-cardBg/40 border border-white/10 p-7 rounded-2xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Engineering</h3>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">REST architecture, authentication, RBAC, Git, GitHub, AI integrations and scalable application design.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             FEATURED WORK (SELECTED WORK)
+        ========================================================== -->
+        <section class="py-20 md:py-28 px-5 sm:px-6 border-y border-white/5 bg-white/[0.015] reveal-item">
+            <div class="max-w-6xl mx-auto">
+                <div class="relative overflow-hidden rounded-[28px] border border-white/10 p-6 sm:p-10 md:p-14 bg-gradient-to-br from-[#0d1b2b] via-[#091522] to-[#06101d] shadow-2xl">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                    <div class="relative z-10 grid lg:grid-cols-[1fr_auto] gap-8 items-end">
+                        <div>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full border border-accent/20 bg-accent/10 text-accent text-[11px] font-bold uppercase tracking-widest mb-4">
+                                Selected Work
+                            </span>
+                            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-[1.05]">
+                                Building for <span class="text-accent">real problems.</span>
+                            </h2>
+                            <p class="mt-4 max-w-2xl text-sm sm:text-base text-gray-400 leading-relaxed">
+                                Explore projects where AI, full-stack engineering and product thinking come together to solve practical problems.
+                            </p>
+                        </div>
+
+                        <a href="projects.html" class="inline-flex items-center justify-center gap-2.5 min-h-[50px] w-full lg:w-auto px-7 rounded-xl bg-accent text-[#03130d] font-black text-xs uppercase tracking-wider hover:bg-accentBright transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-accent/15">
+                            View Case Studies
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m13 5 7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+
+                    <!-- 3 Project Preview Cards -->
+                    <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:bg-white/[0.06] transition-colors">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-accent">01</span>
+                            <h3 class="mt-2 text-lg text-white font-bold">Krishi Chakra</h3>
+                            <p class="mt-2 text-xs sm:text-sm leading-relaxed text-gray-400">AI-powered smart farming ecosystem designed for practical agricultural decision support.</p>
+                        </div>
+
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:bg-white/[0.06] transition-colors">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-accent">02</span>
+                            <h3 class="mt-2 text-lg text-white font-bold">Insight Companion</h3>
+                            <p class="mt-2 text-xs sm:text-sm leading-relaxed text-gray-400">AI-assisted accessibility platform combining multimodal interaction and voice-driven assistance.</p>
+                        </div>
+
+                        <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 hover:bg-white/[0.06] transition-colors sm:col-span-2 lg:col-span-1">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-accent">03</span>
+                            <h3 class="mt-2 text-lg text-white font-bold">Apex Resume</h3>
+                            <p class="mt-2 text-xs sm:text-sm leading-relaxed text-gray-400">AI-assisted resume analysis experience focused on ATS optimization and actionable feedback.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             SKILLS SECTION
-        =========================================== -->
-        <section id="skills" class="py-24 px-5 max-w-7xl mx-auto border-t border-white/5 mt-20 reveal">
-            <div class="mb-16">
-                <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-4 block">01 // Expertise</span>
-                <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight">Technical <span class="text-accent">Arsenal.</span></h2>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <!-- Skill Card 1 -->
-                <div class="skill-card group bg-cardBg/50 border border-white/10 p-8 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20 14 4"></path><path d="m18 8 4 4-4 4"></path><path d="m6 16-4-4 4-4"></path></svg>
+        <!-- =========================================================
+             LEADERSHIP
+        ========================================================== -->
+        <section id="leadership" class="py-20 md:py-28 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/5 reveal-item">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Dual Images Composition -->
+                <div class="relative h-[320px] sm:h-[420px] md:h-[480px] w-full order-2 lg:order-1">
+                    <div class="absolute top-0 right-0 w-[78%] h-[78%] rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10 hover:z-30 transition-all duration-500 hover:scale-102">
+                        <img src="images/aiverse-1.jpeg" alt="Akhil speaking at an Aiverse Club event" class="w-full h-full object-cover" loading="lazy">
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Frontend</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">React.js, JavaScript, HTML5, CSS3, Tailwind CSS and responsive UI architecture.</p>
-                </div>
-                <!-- Skill Card 2 -->
-                <div class="skill-card group bg-cardBg/50 border border-white/10 p-8 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M5 12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2M5 12a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2M7 8h.01M7 16h.01"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Backend</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Node.js, Express.js, RESTful APIs, Java Spring Boot, and Python integrations.</p>
-                </div>
-                <!-- Skill Card 3 -->
-                <div class="skill-card group bg-cardBg/50 border border-white/10 p-8 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v7c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path><path d="M4 12v7c0 1.66 3.58 3 8 3s8-1.34 8-3v-7"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Databases</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">MongoDB, MySQL, Oracle SQL, scalable data modeling and complex query optimization.</p>
-                </div>
-                <!-- Skill Card 4 -->
-                <div class="skill-card group bg-cardBg/50 border border-white/10 p-8 rounded-3xl hover:border-accent/40 hover:bg-accent/5 transition-all duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-accent group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Engineering</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Git workflows, AI API integrations, scalable architecture, and secure authentication.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==========================================
-             LEADERSHIP SECTION
-        =========================================== -->
-        <section id="leadership" class="py-24 px-5 max-w-7xl mx-auto border-t border-white/5 reveal">
-             <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div class="order-2 lg:order-1 relative h-[400px] md:h-[500px] w-full">
-                    <div class="absolute top-0 right-0 w-[75%] h-[80%] rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10 hover:z-30 transition-all duration-500 hover:scale-105">
-                        <img src="images/aiverse-1.jpeg" alt="Event" class="w-full h-full object-cover" loading="lazy">
-                    </div>
-                    <div class="absolute bottom-0 left-0 w-[70%] h-[60%] rounded-3xl overflow-hidden border-8 border-darkBg shadow-2xl z-20 hover:scale-105 transition-transform duration-500">
-                        <img src="images/aiverse-2.jpeg" alt="Mentorship" class="w-full h-full object-cover" loading="lazy">
+                    <div class="absolute bottom-0 left-0 w-[72%] h-[62%] rounded-3xl overflow-hidden border-8 border-darkBg shadow-2xl z-20 hover:scale-102 transition-transform duration-500">
+                        <img src="images/aiverse-2.jpeg" alt="Akhil leading an Aiverse Club activity" class="w-full h-full object-cover" loading="lazy">
                     </div>
                 </div>
 
+                <!-- Text Content -->
                 <div class="order-1 lg:order-2">
-                    <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-4 block">02 // Community</span>
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6">
-                        R&D Lead <br><span class="text-purple-400">@ Aiverse Club</span>
+                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-[11px] font-bold uppercase tracking-widest mb-5">
+                        Leadership & Community
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-[1.05] mb-2">
+                        R&D Lead <br><span class="text-accent">@ Aiverse Club</span>
                     </h2>
-                    <p class="text-gray-400 text-base md:text-lg leading-relaxed mb-8">
-                        I thrive in collaborative environments—sharing knowledge, guiding peers, and cultivating a space where students experiment with generative AI and modern web development.
+                    <p class="text-gray-300 font-semibold mb-6">Lendi Institute of Engineering & Technology</p>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
+                        I enjoy working beyond individual projects — sharing knowledge, helping peers learn new technologies and creating an environment where students can experiment with AI and modern software development.
                     </p>
-                    <ul class="space-y-4 bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+
+                    <ul class="space-y-4 bg-cardBg/40 border border-white/5 p-5 sm:p-6 rounded-2xl shadow-lg">
                         <li class="flex items-start gap-3">
-                            <span class="text-accent mt-1">▹</span>
-                            <p class="text-gray-300 text-sm md:text-base"><strong class="text-white">Mentorship:</strong> Guiding students to bridge the gap between theory and real-world coding.</p>
+                            <span class="text-accent mt-0.5">▹</span>
+                            <span class="text-gray-400 text-xs sm:text-sm leading-relaxed"><strong class="text-white">Mentorship:</strong> Guiding students and helping junior developers understand practical development concepts.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-accent mt-1">▹</span>
-                            <p class="text-gray-300 text-sm md:text-base"><strong class="text-white">Workshops:</strong> Conducting deep-dive sessions on NLP, APIs, and Full-Stack logic.</p>
+                            <span class="text-accent mt-0.5">▹</span>
+                            <span class="text-gray-400 text-xs sm:text-sm leading-relaxed"><strong class="text-white">Technical Workshops:</strong> Conducting sessions around AI, GenAI, NLP and modern web development.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-accent mt-0.5">▹</span>
+                            <span class="text-gray-400 text-xs sm:text-sm leading-relaxed"><strong class="text-white">Innovation:</strong> Encouraging project building, hackathons and peer-to-peer learning.</span>
                         </li>
                     </ul>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             ACHIEVEMENTS
+        ========================================================== -->
+        <section id="achievements" class="py-20 md:py-28 px-5 sm:px-6 max-w-6xl mx-auto border-t border-white/5 reveal-item">
+            <div class="mb-12">
+                <div class="w-10 h-1 bg-accent mb-4 rounded-full"></div>
+                <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight">Achievements & <span class="text-accent">Impact.</span></h2>
+                <p class="mt-4 max-w-2xl text-sm sm:text-base text-gray-400 leading-relaxed">
+                    Experiences that strengthened my ability to communicate ideas, solve problems and build under real-world constraints.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-6 md:gap-8">
+                <!-- Cisco Leadership Recognition -->
+                <div class="bg-cardBg/40 rounded-3xl p-6 sm:p-8 md:p-10 border border-white/5 shadow-xl flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
+                    <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
+                        <img src="images/cisco.jpeg" alt="Akhil interacting with Cisco leadership" class="w-full h-auto object-cover hover:scale-102 transition-transform duration-500" loading="lazy">
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <div class="inline-flex items-center px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+                            Industry Feedback
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-4">Cisco Leadership Recognition</h3>
+                        <blockquote class="border-l-2 border-blue-400 pl-4 py-1 text-gray-300 italic text-xs sm:text-sm leading-relaxed mb-4">
+                            "Receiving guidance and feedback from experienced industry leadership gave me valuable perspective on building solutions aligned with enterprise expectations."
+                        </blockquote>
+                        <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                            The interaction around ApexResume reinforced the importance of combining technical execution with usability, scalability and real-world product thinking.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ideathon Recognition -->
+                <div class="bg-cardBg/40 rounded-3xl p-6 sm:p-8 md:p-10 border border-white/5 shadow-xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                    <div class="w-full lg:w-1/2 grid grid-cols-2 gap-3.5">
+                        <div class="overflow-hidden rounded-2xl border border-white/10 shadow-md">
+                            <img src="images/award-1.jpeg" alt="Ideathon award" class="w-full h-44 sm:h-60 object-cover object-top hover:scale-102 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <div class="overflow-hidden rounded-2xl border border-white/10 shadow-md mt-6">
+                            <img src="images/award-2.jpeg" alt="Innovation summit award" class="w-full h-44 sm:h-60 object-cover object-top hover:scale-102 transition-transform duration-500" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2">
+                        <div class="inline-flex items-center px-3 py-1 bg-accent/10 text-accent rounded-full border border-accent/20 text-[11px] font-bold uppercase tracking-widest mb-4">
+                            Competition Recognition
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-6">Ideathon <span class="text-accent">Recognition</span></h3>
+
+                        <div class="space-y-3.5">
+                            <div class="bg-white/[0.025] p-5 rounded-2xl border border-white/5 hover:border-accent/20 transition-colors">
+                                <h4 class="text-accent font-bold text-sm sm:text-base">MVGR College of Engineering</h4>
+                                <p class="mt-1.5 text-xs sm:text-sm text-gray-400 leading-relaxed">
+                                    Secured the <strong class="text-white">2nd Prize</strong> at a state-level Ideathon while developing and pitching a complete solution under time constraints.
+                                </p>
+                            </div>
+
+                            <div class="bg-white/[0.025] p-5 rounded-2xl border border-white/5 hover:border-accent/20 transition-colors">
+                                <h4 class="text-accent font-bold text-sm sm:text-base">Lendi National Innovation Summit</h4>
+                                <p class="mt-1.5 text-xs sm:text-sm text-gray-400 leading-relaxed">
+                                    Secured the <strong class="text-white">2nd Prize</strong> at the Rural Innovation Challenge, presenting a technology-driven solution focused on practical impact.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- ==========================================
+
+    <!-- =========================================================
          FOOTER
-    =========================================== -->
-    <footer id="contact" class="bg-[#040b14] border-t border-white/5 py-20 px-5 mt-20 relative overflow-hidden">
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
-            <span class="text-accent text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Let's Connect</span>
-            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
-                Ready to build something <span class="text-accent">meaningful?</span>
-            </h2>
-            <p class="text-gray-400 text-base md:text-lg mb-10 max-w-xl mx-auto">
-                Whether it's a full-stack project, an AI integration, or an innovative opportunity, my inbox is open.
+    ========================================================== -->
+    <footer id="contact" class="bg-[#040b14] py-16 md:py-24 border-t border-white/10 text-center px-5 relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-48 bg-accent/5 rounded-full blur-[90px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto reveal-item">
+            <span class="text-[11px] uppercase tracking-[0.25em] text-accent font-bold">Have an opportunity?</span>
+            <h2 class="mt-4 text-3xl sm:text-5xl font-black text-white tracking-tight">Let's build something <span class="text-accent">meaningful.</span></h2>
+            <p class="mt-4 text-xs sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
+                I'm open to opportunities where I can contribute through full-stack engineering, AI-assisted development and problem solving.
             </p>
-            
-            <a href="mailto:akhilbayya111@gmail.com" class="inline-flex min-h-[56px] items-center justify-center px-8 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-accent/40 rounded-xl text-white font-mono font-bold transition-all duration-300 hover:-translate-y-1 w-full sm:w-auto">
+
+            <a href="mailto:akhilbayya111@gmail.com" class="mt-7 inline-flex max-w-full items-center justify-center text-accent hover:text-white transition-colors font-mono text-xs sm:text-base break-all bg-accent/5 px-6 py-3 rounded-xl border border-accent/20">
                 akhilbayya111@gmail.com
             </a>
 
-            <div class="flex justify-center gap-4 mt-12 mb-8">
-                <!-- Github -->
-                <a href="https://github.com/Akhilbayya297326" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:border-white/30 hover:-translate-y-1 transition-all">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+            <!-- Social Links (48px Touch Targets) -->
+            <div class="flex justify-center gap-3.5 mt-8 mb-10">
+                <!-- GitHub -->
+                <a href="https://github.com/Akhilbayya297326" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-gray-400 hover:text-white hover:border-accent/40 hover:bg-accent/10 transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
                 </a>
                 <!-- LinkedIn -->
-                <a href="https://linkedin.com/in/bayya-akhil-009a412a8" target="_blank" class="w-14 h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-[#0a66c2] hover:border-[#0a66c2]/30 hover:-translate-y-1 transition-all">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.123 2.062 2.062 0 0 1 0 4.123zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.454C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                <a href="https://linkedin.com/in/bayya-akhil-009a412a8" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-12 h-12 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 text-gray-400 hover:text-[#0a66c2] hover:border-[#0a66c2]/40 hover:bg-[#0a66c2]/10 transition-all duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.123 2.062 2.062 0 0 1 0 4.123zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.454C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                 </a>
             </div>
-            <p class="text-gray-600 text-xs font-semibold">© 2026 Bayya Akhil · Built with purpose.</p>
+
+            <p class="text-gray-500 text-xs font-medium">© 2026 Bayya Akhil · Built with purpose.</p>
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+
+    <!-- =========================================================
+         INTERACTIONS & SCRIPTS
+    ========================================================== -->
     <script>
-        // Smooth Mobile Menu (No popping, uses transforms and opacity)
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const l1 = document.querySelector('.line-1');
-        const l2 = document.querySelector('.line-2');
-        const l3 = document.querySelector('.line-3');
+        // Bulletproof Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const barTop = document.getElementById('bar-top');
+        const barMid = document.getElementById('bar-mid');
+        const barBot = document.getElementById('bar-bot');
         let isMenuOpen = false;
 
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            if(isMenuOpen) {
-                menu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
-                menu.classList.add('opacity-100', 'visible', 'translate-y-0');
-                l1.setAttribute('d', 'M6 6l12 12');
-                l2.style.opacity = '0';
-                l3.setAttribute('d', 'M6 18L18 6');
-                btn.classList.add('text-accent', 'border-accent/50');
-            } else {
-                menu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
-                menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
-                l1.setAttribute('d', 'M4 6h16');
-                l2.style.opacity = '1';
-                l3.setAttribute('d', 'M4 18h16');
-                btn.classList.remove('text-accent', 'border-accent/50');
-            }
+        function closeMenu() {
+            if (!isMenuOpen) return;
+            isMenuOpen = false;
+            mobileMenu.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+            mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            setTimeout(() => {
+                if (!isMenuOpen) mobileMenu.classList.add('hidden');
+            }, 300);
+            
+            // Revert Hamburger Icon
+            barTop.setAttribute('d', 'M4 6h16');
+            barMid.style.opacity = '1';
+            barBot.setAttribute('d', 'M4 18h16');
+            menuBtn.setAttribute('aria-expanded', 'false');
         }
 
-        btn.addEventListener('click', toggleMenu);
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => { if(isMenuOpen) toggleMenu(); });
+        function openMenu() {
+            if (isMenuOpen) return;
+            isMenuOpen = true;
+            mobileMenu.classList.remove('hidden');
+            // Force reflow for CSS transition
+            void mobileMenu.offsetWidth;
+            mobileMenu.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+            mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+
+            // Morph to 'X' Icon
+            barTop.setAttribute('d', 'M6 6l12 12');
+            barMid.style.opacity = '0';
+            barBot.setAttribute('d', 'M6 18L18 6');
+            menuBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isMenuOpen) closeMenu();
+            else openMenu();
         });
 
-        // Scroll animations (Intersection Observer)
-        const observer = new IntersectionObserver((entries) => {
+        // Close when clicking any menu link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close when clicking anywhere outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !navbar.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Intersection Observer for Smooth Scroll Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.08 });
 
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        document.querySelectorAll('.reveal-item').forEach(el => revealObserver.observe(el));
     </script>
+
 </body>
 </html>
